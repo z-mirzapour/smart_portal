@@ -15,7 +15,7 @@ def create_app():
     app.config.from_object('app.config.Config')
     login_manager.login_view = 'auth.login'
     
-    # Import and register blueprints here to avoid circular imports
+   
     from app.routes.auth_routes import auth_bp
     from app.routes.student_routes import student_bp
     from app.routes.admin_routes import admin_bp
@@ -23,8 +23,7 @@ def create_app():
     app.register_blueprint(auth_bp)
     app.register_blueprint(student_bp)
     app.register_blueprint(admin_bp)
-    
-    # Import user model after app creation to avoid circular imports
+  
     from app.models.user import User
     
     @login_manager.user_loader
