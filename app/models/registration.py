@@ -26,8 +26,7 @@ class Registration:
         new_course = Course.get_by_id(new_course_id)
         if not new_course:
             return False
-        
-        # schedule conflict check 
+    
         for course in registered_courses:
             if course.schedule == new_course.schedule:
                 return True
@@ -36,16 +35,13 @@ class Registration:
 
     @staticmethod
     def register(student_id, course_id):
-        # Checks if already registered
         existing = Registration.get_by_student(student_id)
         if any(r['course_id'] == course_id for r in existing):
             return False, "Already registered for this course"
         
-        # Checks schedule conflicts
         if Registration.has_schedule_conflict(student_id, course_id):
             return False, "Schedule conflict with existing registration"
         
-        # Creates new registration
         registrations = JSONHandler.load_data('registrations.json')
         new_reg = {
             'id': str(uuid.uuid4()),
@@ -61,12 +57,11 @@ class Registration:
     def unregister(student_id, course_id):
         registrations = JSONHandler.load_data('registrations.json')
     
-        # Keep all registrations except the matching one
         updated_registrations = [
             r for r in registrations 
             if not (r['student_id'] == student_id and r['course_id'] == course_id)
         ]
-        # If a registration was removed
+
         if len(updated_registrations) < len(registrations):  
             JSONHandler.save_data('registrations.json', updated_registrations)
             return True, "Successfully unregistered"
@@ -75,7 +70,6 @@ class Registration:
     @staticmethod
     def delete(user_id, course_id):
         registrations = JSONHandler.load_data('registrations.json')
-        # Keep registrations that don't match the user_id and course_id
         updated_registrations = [
             r for r in registrations 
             if not (r.get('user_id') == user_id and r.get('course_id') == course_id)
