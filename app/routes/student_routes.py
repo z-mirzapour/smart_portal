@@ -57,14 +57,13 @@ def view_schedule():
 from flask_login import current_user, login_required
 
 @student_bp.route('/checkout', methods=['POST'])
-@login_required  # makes sure only logged-in users can access
+@login_required
 def checkout():
     selected_course_ids = request.form.getlist('selected_courses')
     if not selected_course_ids:
         flash('Please select at least one course', 'error')
         return redirect(url_for('student.view_courses'))
     
-    # Gets course details
     selected_courses = []
     total_amount = 0
     for course_id in selected_course_ids:
@@ -86,7 +85,6 @@ def process_payment():
         flash('No courses selected for payment', 'error')
         return redirect(url_for('student.view_courses'))
     
-    # Register for new courses
     registered_courses = []
     total_amount = 0
     
@@ -104,7 +102,6 @@ def process_payment():
         flash('No courses were successfully registered', 'error')
         return redirect(url_for('student.view_courses'))
     
-    # Generate mock transaction details
     transaction_id = f"mock_{uuid.uuid4().hex[:8]}"
     
     return render_template('student/payment_success.html',
@@ -120,7 +117,6 @@ def course_details(course_id):
         flash('Course not found', 'error')
         return redirect(url_for('student.view_courses'))
     
-    # is student registered for this course
     is_registered = Registration.is_student_registered(current_user.id, course_id)
     
     return render_template('student/course_details.html', 
