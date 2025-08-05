@@ -1,0 +1,38 @@
+[
+    {
+        "id": "5",
+        "student_id": "b6ed6cf8-2ec8-446f-9b6c-d0e4473a8e53",
+        "course_id": "3",
+        "status": "registered"
+    },
+    {
+        "id": "5",
+        "student_id": "b6ed6cf8-2ec8-446f-9b6c-d0e4473a8e53",
+        "course_id": "82cd2492-6218-4b6c-97ce-34d83e0ef711",
+        "status": "registered"
+    },
+    {
+        "id": "6",
+        "student_id": "5487ea63-bf20-4ac5-8483-bd3ceaa9bfdb",
+        "course_id": "3",
+        "status": "registered"
+    },
+    {
+        "id": "9",
+        "student_id": "b6ed6cf8-2ec8-446f-9b6c-d0e4473a8e53",
+        "course_id": "371837a3-3caa-41cf-923d-8efcaf1cfead",
+        "status": "registered"
+    },
+    {
+        "id": "d5a31d95-b8ae-4a90-ad1b-0ee215743615",
+        "student_id": "0bf650a7-3def-41b7-8b44-66db97a920e8",
+        "course_id": "3",
+        "status": "registered"
+    },
+    {
+        "id": "0872666d-9d51-4ed3-80d0-375e9ddaf282",
+        "student_id": "b6ed6cf8-2ec8-446f-9b6c-d0e4473a8e53",
+        "course_id": "5",
+        "status": "registered"
+    }
+]

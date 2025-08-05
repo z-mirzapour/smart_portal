@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Student Enrollments{% endblock %}
+
+{% block content %}
+<div class="admin-container container"> {# Added container for width and centering #}
+    <h1 class="page-title">Student Enrollments</h1>
+    
+    {% if students_data %}
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Student Username</th>
+                    <th>Student ID</th>
+                    <th>Email</th>
+                    <th>Registered Courses</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student_info in students_data %}
+                <tr>
+                    <td>{{ student_info.username }}</td>
+                    <td>{{ student_info.student_id }}</td>
+                    <td>{{ student_info.email }}</td>
+                    <td>
+                        {% if student_info.courses %}
+                            {% for course in student_info.courses %}
+                                <span class="course-tag">
+                                    {{ course.code }} - {{ course.title }}
+                                </span>
+                            {% endfor %}
+                        {% else %}
+                            No courses registered.
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No student enrollments found yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

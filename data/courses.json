@@ -1,0 +1,68 @@
+[
+    {
+        "id": "1",
+        "code": "CS101",
+        "title": "Introduction to Computer Science",
+        "description": "Fundamentals of computer science and programming.",
+        "schedule": "Fri/Wed 10:00-11:30",
+        "capacity": 25,
+        "prerequisites": [],
+        "price": 99.99,
+        "video_id": "Qpw-udshXdM"
+    },
+    {
+        "id": "2",
+        "code": "MATH201",
+        "title": "Calculus I",
+        "description": "Introduction to differential and integral calculus.",
+        "schedule": "Tue/Thu 13:00-14:30",
+        "capacity": 30,
+        "prerequisites": [],
+        "video_id": "Zp3Q57EJO4E"
+    },
+    {
+        "id": "3",
+        "code": "CS102",
+        "title": "Advanced Programming",
+        "description": "focusing on efficient problem-solving and advanced software development principles.",
+        "schedule": "Sat/Tue 10:00-11:30",
+        "capacity": 25,
+        "prerequisites": [
+            "Introduction to Computer Science"
+        ]
+    },
+    {
+        "id": "4",
+        "code": "MATH202",
+        "title": "Calculus II",
+        "description": "integral calculus, differential equations, sequences and series.",
+        "schedule": "Tue/Thu 13:00-14:30",
+        "capacity": 25,
+        "prerequisites": [
+            "Calculus I"
+        ],
+        "video_id": "GlqcFkOrDK8"
+    },
+    {
+        "id": "5",
+        "code": "Phy30",
+        "title": "Physics I",
+        "description": "covering fundamental concepts of classical mechanics.",
+        "schedule": "Fri/Wed 08:00-09:30",
+        "capacity": 30,
+        "prerequisites": [],
+        "video_id": "dC4sTTWuEnA"
+    },
+    {
+        "id": "6",
+        "code": "Phy302",
+        "title": "Physics II :Electricity",
+        "description": "covering topics like electromagnetism, optics, and modern physics.",
+        "schedule": "Sun/Wed 10:00-11:30",
+        "capacity": 30,
+        "prerequisites": [
+            "Physics I"
+        ],
+        "video_id": "rHgKLIYcZOI"
+    }
+]

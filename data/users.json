@@ -1,0 +1,30 @@
+[
+    {
+        "id": "b6ed6cf8-2ec8-446f-9b6c-d0e4473a8e53",
+        "username": "z_mirzapour",
+        "email": "Z1771385@gmail.com",
+        "password_hash": "scrypt:32768:8:1$GY1WmLwe3iTm11wX$0ecca7fa3bbae042af42ca85987e297b37905796f66392134101fa48c778051fbe2fc9efeb14e1c6f8401e8b47b33f33e7273b8a66db60269795845f8babb7a1",
+        "role": "student"
+    },
+    {
+        "id": "0b5d4b86-6f56-46f8-aa81-e46b28b9197c",
+        "username": "zeinab-m",
+        "email": "z7808139@gmail.com",
+        "password_hash": "scrypt:32768:8:1$CIZD4tYaGOHdYawW$68b56e0a1b167e008c93e4521d2335d616a125bae09ecae8fde8e1c04ae62f1e90707f4e0aa5f1e9fe046ea6ec25fdf8bd3a245b1f0f3e1b7db9f3f32c3d0dc1",
+        "role": "admin"
+    },
+    {
+        "id": "461a8b54-5f98-4e5a-9a92-66c0b17cce44",
+        "username": "zahra harsij",
+        "email": "zahraharsijsani@gmail.com",
+        "password_hash": "scrypt:32768:8:1$CBOMSmSTQtLpS1Is$11b2f42152b30ec29c3430db40957b62fc65791433dd02b4f21c9e7f07aa55ef6df4cc156243564182472eba4bcf35236fd8336a8525dcd256516d631a76a57d",
+        "role": "admin"
+    },
+    {
+        "id": "0bf650a7-3def-41b7-8b44-66db97a920e8",
+        "username": "zahra",
+        "email": "zahraharsijsani@gmail.com",
+        "password_hash": "scrypt:32768:8:1$qXBPfqH8P4nAX4RJ$08f6e3c878d145daf6c162d4e69fe628c40e1099d4c4ee11583ff63e01cf3375e2bd9fe8cde6438bce501faa94ff396a81db8d07e7d57758e63d31ad6c91f608",
+        "role": "student"
+    }
+]

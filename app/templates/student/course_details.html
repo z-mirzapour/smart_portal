@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}{{ course.code }} - Details{% endblock %}
+
+{% block content %}
+    <div class="course-details-container">
+        <div class="header-container">
+            <h1>{{ course.code }} - {{ course.title }}</h1>
+            <a href="{{ url_for('student.view_courses') }}" class="btn btn-back">Back to Courses</a>
+        </div>
+
+        <div class="detailed-course-card">
+            <div class="course-info">
+                <h2>Course Information</h2>
+                {% if course.video_id %}
+                <div class="course-video">
+                    <h3>Introduction</h3>
+                    <div class="video-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/{{ course.video_id }}?rel=0" 
+                            frameborder="0"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                {% endif %}
+                <p><strong>Description:</strong> {{ course.description }}</p>
+                <p><strong>Schedule:</strong> {{ course.schedule }}</p>
+                <p><strong>Instructor:</strong> {{ course.instructor or 'TBA' }}</p>
+                <p><strong>Capacity:</strong> {{ course.capacity }}</p>
+                <p><strong>Price:</strong> ${{ course.price or '100.00' }}</p>
+                
+                {% if course.prerequisites %}
+                    <p><strong>Prerequisites:</strong> {{ course.prerequisites|join(', ') }}</p>
+                {% endif %}
+                
+                <p><strong>Syllabus:</strong></p>
+                <div class="syllabus-content">
+                    {{ course.syllabus or 'Syllabus will be provided in class.' }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+    <h1>Course Registration Checkout</h1>
+    <div class="checkout-container">
+        <div class="selected-courses">
+            <h2>Selected Courses</h2>
+            <ul class="course-summary">
+                {% for course in selected_courses %}
+                    <li>
+                        <span class="course-title">{{ course.code }} - {{ course.title }}</span>
+                        <span class="course-price">${{ "%.2f"|format(course.price) }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="total-amount">
+                <span>Total:</span>
+                <span class="amount">${{ "%.2f"|format(total_amount) }}</span>
+            </div>
+        </div>
+
+        <div class="payment-section">
+            <h2>Payment Information</h2>
+            <form method="POST" action="{{ url_for('student.process_payment') }}" class="payment-form">
+                <input type="hidden" name="course_ids" value="{{ course_ids }}">
+                
+                <div class="payment-method">
+                    <h3>Mock Payment Details</h3>
+                    <div class="form-group">
+                        <label>Card Number</label>
+                        <input type="text" value="4242 4242 4242 4242" readonly class="form-control">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Expiry Date</label>
+                            <input type="text" value="12/25" readonly class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>CVV</label>
+                            <input type="text" value="123" readonly class="form-control">
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary submit-payment">Complete Payment</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

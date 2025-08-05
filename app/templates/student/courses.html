@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Available Courses{% endblock %}
+
+{% block content %}
+    <form method="POST" action="{{ url_for('student.checkout') }}" id="courseSelectionForm">
+        <div class="header-container">
+            <h1>Available Courses</h1>
+            <a href="{{ url_for('student.view_schedule') }}" class="btn btn-view-schedule">VIEW MY SCHEDULE</a>
+        </div>
+        <div class="courses-list">
+            {% for course in courses %}
+                <div class="course-card">
+                    <div class="course-header">
+                        <h2>{{ course.code }} - {{ course.title }}</h2>
+                    </div>
+                    <div class="course-details">
+                        <p>{{ course.description }}</p>
+                        <p><strong>Schedule:</strong> {{ course.schedule }}</p>
+                        <p><strong>Capacity:</strong> {{ course.capacity }}</p>
+                        <p><strong>Price:</strong> ${{ course.price or '100.00' }}</p>
+                        {% if course.prerequisites %}
+                            <p><strong>Prerequisites:</strong> {{ course.prerequisites|join(', ') }}</p>
+                        {% endif %}
+                        {% if course.id in registered_course_ids %}
+                            <span class="registered-badge">Registered</span>
+                        {% else %}
+                            <div class="course-actions">
+                                <a href="{{ url_for('student.course_details', course_id=course.id) }}" class="btn btn-details">
+                                    More Details
+                                </a>
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" 
+                                           id="course_{{ course.id }}" 
+                                           name="selected_courses" 
+                                           value="{{ course.id }}"
+                                           class="hidden-checkbox">
+                                    <label for="course_{{ course.id }}" class="checkbox-label">
+                                        <span class="checkmark"></span>
+                                        Select Course
+                                    </label>
+                                </div>
+                            </div>
+                        {% endif %}            
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary proceed-btn">Proceed to Payment</button>
+        </div>
+    </form>
+{% endblock %}
