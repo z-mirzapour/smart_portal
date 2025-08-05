@@ -6,7 +6,6 @@ body {
     background-color: #ffffff;
 }
 
-/* New header container styles */
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -15,7 +14,6 @@ body {
     padding: 0 20px;
 }
 
-/* New VIEW MY SCHEDULE button styles */
 .btn-view-schedule {
     background-color: #000000;
     color: white;
@@ -259,7 +257,7 @@ button:hover {
     font-size: 1em; 
     margin-top: auto; 
     cursor: pointer;
-    box-sizing: border-box; /* Include padding in width */
+    box-sizing: border-box;
     text-decoration: none; 
     transition: background-color 0.2s ease; 
 }
@@ -584,7 +582,6 @@ thead th {
     font-size: large;
 }
 
-/* Improved Table Styling */
 .styled-table {
     width: 100%;
     border-collapse: collapse;
@@ -628,7 +625,6 @@ thead th {
     transform: translateX(2px);
 }
 
-/* Button styling for table actions */
 .actions-cell {
     white-space: nowrap;
 }
@@ -661,7 +657,6 @@ thead th {
     border-color: #bd2130;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .styled-table {
         font-size: 0.8em;
@@ -754,7 +749,7 @@ thead th {
 }
 
 form {
-    background: white !important; /* Override to white */
+    background: white !important;
     max-width: max-content;
 }
 
@@ -894,7 +889,6 @@ input:focus + .password-strength::after {
     margin-right: 0.5rem;
 }
 
-/* Course Management Styles */
 .admin-container {
     max-width: 1200px;
     margin: 2rem auto;
@@ -1126,7 +1120,6 @@ input:focus + .password-strength::after {
     font-size: 0.875rem;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .admin-header {
         flex-direction: column;
@@ -1166,7 +1159,6 @@ input:focus + .password-strength::after {
     }
 }
 
-/* Wide form styles */
 .wide-form {
     max-width: 800px;
     margin: 20px auto;
@@ -1284,26 +1276,23 @@ input:focus + .password-strength::after {
     }
 }
 
-/* Make Register/Login text stay black (text-only) */
 .auth-tab,
 .login-btn,
 .register-btn {
     color: #7e7e7e ; 
-    background: none !important; /* Removes background */
+    background: none !important;
     border: none !important; 
     padding: 0 !important; 
 }
 
-/* Keep hover effects minimal */
 .auth-tab:hover,
 .login-btn:hover, 
 .register-btn:hover {
-    background: none !important; /* Ensures no background appears */
+    background: none !important;
     transform: translateY(-2px);
     color: #000000 ;
 }
 
-/* Checkout Page */
 .checkout-container {
     display: flex;
     flex-wrap: wrap;
@@ -1355,7 +1344,6 @@ input:focus + .password-strength::after {
     align-items: center;
 }
 
-/* Payment Success Page */
 .success-container {
     text-align: center;
     max-width: 600px;
@@ -1412,7 +1400,6 @@ input:focus + .password-strength::after {
     align-items: center;
 }
 
-/* Course Details Page */
 .course-details-container {
     max-width: 900px;
     margin: 0 auto;
@@ -1451,7 +1438,6 @@ input:focus + .password-strength::after {
     color: white;
 }
 
-/* More Details button in course list */
 .btn-details {
     background: #000000;
     color: rgb(255, 254, 254);
@@ -1482,7 +1468,6 @@ input:focus + .password-strength::after {
     transform: translateY(-2px);
 }
 
-/* Custom checkbox container */
 .custom-checkbox {
     display: inline-block;
     position: relative;
@@ -1491,7 +1476,6 @@ input:focus + .password-strength::after {
     cursor: pointer;
 }
 
-/* Hide default checkbox */
 .hidden-checkbox {
     position: absolute;
     opacity: 0;
@@ -1499,7 +1483,6 @@ input:focus + .password-strength::after {
     height: 0;
 }
 
-/* Custom checkbox */
 .checkmark {
     position: absolute;
     top: 0;
@@ -1512,17 +1495,14 @@ input:focus + .password-strength::after {
     transition: all 0.2s;
 }
 
-/* Checkmark hover state */
 .checkbox-label:hover .checkmark {
     background-color: #e8f5e9;
 }
 
-/* Checked state */
 .hidden-checkbox:checked ~ .checkbox-label .checkmark {
     background-color: #242424;
 }
 
-/* Checkmark symbol (hidden when unchecked) */
 .checkmark:after {
     content: "";
     position: absolute;
@@ -1536,12 +1516,10 @@ input:focus + .password-strength::after {
     transform: rotate(45deg);
 }
 
-/* Show checkmark when checked */
 .hidden-checkbox:checked ~ .checkbox-label .checkmark:after {
     display: block;
 }
 
-/* Label text styling */
 .checkbox-label {
     display: flex;
     align-items: center;
@@ -1551,8 +1529,6 @@ input:focus + .password-strength::after {
     user-select: none;
 }
 
-/*video*/ 
-/* Video styles for DETAIL page only */
 .course-video {
     margin: 25px 0;
 }
@@ -1564,7 +1540,7 @@ input:focus + .password-strength::after {
 
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     border-radius: 8px;
