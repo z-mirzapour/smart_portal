@@ -15,7 +15,6 @@ def restrict_to_admin():
         flash("Admin access required", "danger")
         return redirect(url_for('student.dashboard'))
 
-# Admin Dashboard - Shows students and their courses
 @admin_bp.route('/dashboard')
 @login_required
 def dashboard():
@@ -26,8 +25,7 @@ def dashboard():
     total_students = len(User.get_all_students()) 
     total_courses = len(Course.get_all())
     registrations = Registration.get_all() 
-    
-    # Data for Student Enrollments table on dashboard
+
     students_for_dashboard_table = RegistrationService.get_all_student_enrollment_details()
 
     return render_template('admin/dashboard.html',
@@ -39,7 +37,7 @@ def dashboard():
 
 @admin_bp.route('/courses', methods=['GET', 'POST'])
 def courses():
-    print("Request method:", request.method)  # Debugging
+    print("Request method:", request.method)
     
     if request.method == 'POST':
         print("Form data:", request.form)  
@@ -74,7 +72,6 @@ def edit_course(course_id):
         return redirect(url_for('admin.courses'))
 
     if request.method == 'POST':
-        # Handles form submission
         course.code = request.form.get('code')
         course.title = request.form.get('title')
         course.description = request.form.get('description')
@@ -88,7 +85,6 @@ def edit_course(course_id):
         flash('Course updated successfully.', 'success')
         return redirect(url_for('admin.courses'))
 
-    # GET request - shows the form
     return render_template('admin/course_form.html', course=course)
 
 @admin_bp.route('/courses/delete/<course_id>', methods=['POST'])
@@ -98,7 +94,6 @@ def delete_course(course_id):
         flash("Access denied: Admin privileges required.", "danger")
         return redirect(url_for('student.dashboard'))
 
-    # verifying that the course exists
     if not Course.get_by_id(course_id):
         flash("Course not found", "error")
         return redirect(url_for('admin.courses'))
@@ -140,11 +135,8 @@ def add_course():
         flash('Course created successfully', 'success')
         return redirect(url_for('admin.courses'))
 
-    # GET request - shows empty form
     return render_template('admin/course_form.html', course=None)
 
-
-#'All Student Schedules' page
 @admin_bp.route('/manage_schedules') 
 @login_required
 def manage_schedules(): 
