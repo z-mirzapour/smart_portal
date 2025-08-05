@@ -30,11 +30,9 @@ class Course:
     def save(self):
         courses = JSONHandler.load_data('courses.json')
     
-        # Checks if course exists
         existing_index = next((i for i, c in enumerate(courses) if c['id'] == self.id), None)
     
         if existing_index is not None:
-            # Updates existing course
             courses[existing_index] = {
                 'id': self.id,
                 'code': self.code,
@@ -47,7 +45,6 @@ class Course:
                 'video_id': self.video_id
             }
         else:
-            # Adds new course
             courses.append({
                 'id': self.id,
                 'code': self.code,
@@ -66,7 +63,6 @@ class Course:
     def save_course(course_data):
         courses = JSONHandler.load_data('courses.json')
     
-        # either Updates existing or add new
         existing = next((c for c in courses if c['id'] == course_data['id']), None)
         if existing:
             existing.update(course_data)
@@ -81,12 +77,10 @@ class Course:
             courses = JSONHandler.load_data('courses.json')
             initial_count = len(courses)
         
-            # Remove the course
             updated_courses = [c for c in courses if c['id'] != course_id]
         
             if len(updated_courses) < initial_count:
                 JSONHandler.save_data('courses.json', updated_courses)
-                # Also remove any registrations for this course
                 Registration.remove_course_registrations(course_id)
                 return True, "Course deleted successfully"
             return False, "Course not found"
