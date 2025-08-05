@@ -6,7 +6,7 @@ class AuthService:
     @staticmethod
     def register_user(username, email, password, role='student'):
         if User.get_by_username(username):
-            return None  # if user already exists
+            return None 
         
         new_user = User(
             id=str(uuid.uuid4()),  
