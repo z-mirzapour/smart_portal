@@ -20,13 +20,13 @@ A modern web application for university course registration with role-based acce
 ## Project Structure
 smart-portal/
 ├── app/
-│   ├── templates/          # All HTML templates
-│   ├── static/             # CSS/JS/images
+│   ├── templates/          
+│   ├── static/             # CSS/JS/videos
 │   ├── models/             # Data handling
 │   ├── routes/             # View controllers
 │   ├── services/
 │   ├── utils/
-│   ├── __init__.py         # Flask app factory
+│   ├── __init__.py         # Flask app creation
 |   └── config.py           # Configuration
 ├── data/                   # JSON databases                 
 ├── run.py  
