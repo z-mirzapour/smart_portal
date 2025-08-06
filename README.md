@@ -32,5 +32,3 @@ smart-portal/
 ├── run.py  
 ├── README.md
 └── URL_DIAGRAM.md  
-
-For detailed endpoint documentation, see: [URL Structure Diagram](/docs/URL_DIAGRAM.md)
